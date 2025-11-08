@@ -4,7 +4,7 @@ const compression = require('compression');
 const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
-const helmet = require('helmet'); //obscures info from malicious hackers
+const helmet = require('helmet'); // obscures info from malicious hackers
 
 const router = require('./router.js');
 
@@ -12,11 +12,11 @@ const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const dbURI = process.nextTick.MONGODB_URI || 'mongodb://localhost/DomoMaker';
 mongoose.connect(dbURI).catch((err) => {
-    if(err) {
-        console.log('Could not connect to database');
-        throw err;
-    }
-})
+  if (err) {
+    console.log('Could not connect to database');
+    throw err;
+  }
+});
 
 const app = express();
 app.use(helmet());
@@ -33,6 +33,6 @@ app.set('views', `${__dirname}/../views`);
 router(app);
 
 app.listen(port, (err) => {
-    if(err) { throw err; }
-    console.log(`Listening on port ${port}`);
+  if (err) { throw err; }
+  console.log(`Listening on port ${port}`);
 });
