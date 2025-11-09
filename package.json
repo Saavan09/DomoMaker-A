@@ -20,10 +20,11 @@
   ],
   "author": "Cody Van De Mark / Austin Willoughby",
   "license": "Apache 2.0",
-    "dependencies": {
+  "dependencies": {
     "bcrypt": "^6.0.0",
     "compression": "^1.8.1",
     "connect-redis": "^9.0.0",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.1",
     "express-session": "^1.18.2",
